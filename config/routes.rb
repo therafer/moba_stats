@@ -1,5 +1,5 @@
 MobaStats::Application.routes.draw do
-  root 'users#new'
+  root 'pages#home'
 
   resources :users
 
