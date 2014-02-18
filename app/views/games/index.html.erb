@@ -1,6 +1,12 @@
 <h2> Moba Games </h2>
 
 <% @games.each do |game| %>
-  <%= link_to(game.name) %>
+  <%= link_to(game.name, game_path(game)) %>
+<% end %>
+
+
+<%= form_for @game do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit "Create Game" %>
 <% end %>
 

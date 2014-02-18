@@ -1,0 +1,21 @@
+<h1>
+  <%= @game.name %>
+</h1>
+
+  <% @game.heros.each do |hero| %>
+    <li>
+      <%= hero.name %>
+      <ul>
+        <li> <%= hero.stats %> </li>
+        <li> <%= hero.items %> </li>
+        <li> <%= link_to "Edit", edit_game_hero_path(@game, hero) %> </li>
+      </ul>
+    </li>
+  <% end %>
+
+  <%= form_for [@game, @hero] do |f| %>
+    <%= f.text_field :name, placeholder: "Name" %>
+    <%= f.text_field :stats, placeholder: "Stats" %>
+    <%= f.text_field :items, placeholder: "Items" %>
+    <%= f.submit "Create Hero"%>
+  <% end %>

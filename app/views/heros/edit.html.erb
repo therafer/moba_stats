@@ -1,0 +1,8 @@
+<h1> Edit Hero </h1>
+
+  <%= form_for @hero do |f| %>
+    <%= f.text_field :name %>
+    <%= f.text_field :stats %>
+    <%= f.text_field :items %>
+    <%= f.submit "Edit Hero"%>
+  <% end %>

@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140102232800) do
+ActiveRecord::Schema.define(version: 20140123224246) do
 
   create_table "games", force: true do |t|
     t.string "name"
+  end
+
+  create_table "heros", force: true do |t|
+    t.string  "name"
+    t.string  "stats"
+    t.string  "items"
+    t.integer "game_id"
   end
 
   create_table "users", force: true do |t|
