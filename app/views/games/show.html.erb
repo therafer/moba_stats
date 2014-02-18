@@ -19,3 +19,20 @@
     <%= f.text_field :items, placeholder: "Items" %>
     <%= f.submit "Create Hero"%>
   <% end %>
+
+  <% @game.items.each do |hero| %>
+    <li>
+      <%= item.name %>
+      <ul>
+        <li> <%= item.stats %> </li>
+        <li> <%= link_to "Edit", edit_game_item_path(@game, item) %> </li>
+      </ul>
+    </li>
+  <% end %>
+
+  <%= form_for [@game, @item] do |f| %>
+    <%= f.text_field :name, placeholder: "Name" %>
+    <%= f.text_field :description, placeholder: "Description" %>
+    <%= f.submit "Create Item"%>
+  <% end %>
+

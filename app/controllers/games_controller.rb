@@ -8,6 +8,7 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @hero = Hero.new(game_id: @game.id)
+    @item = Item.new(game_id: @game.id)
   end
 
   def new

@@ -5,6 +5,7 @@ MobaStats::Application.routes.draw do
 
   resources :games do
     resources :heros
+    resources :items
   end
 
   resources :heros
