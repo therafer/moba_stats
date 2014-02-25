@@ -2,32 +2,34 @@
   <%= @game.name %>
 </h1>
 
+<h2> Heroes </h2>
   <% @game.heros.each do |hero| %>
-    <li>
-      <%= hero.name %>
+    <%= hero.name %>
+    <ul>
+      <li> <%= hero.stats %> </li>
       <ul>
-        <li> <%= hero.stats %> </li>
-        <li> <%= hero.items %> </li>
-        <li> <%= link_to "Edit", edit_game_hero_path(@game, hero) %> </li>
+        <% hero.items.each do |item| %>
+          <li> <%= item.name %> </li>
+        <% end %>
       </ul>
-    </li>
+      <li> <%= link_to "Edit", edit_game_hero_path(@game, hero) %> </li>
+    </ul>
   <% end %>
 
   <%= form_for [@game, @hero] do |f| %>
     <%= f.text_field :name, placeholder: "Name" %>
     <%= f.text_field :stats, placeholder: "Stats" %>
-    <%= f.text_field :items, placeholder: "Items" %>
+    <%# <%= f.text_field :items, placeholder: "Items" %1> %>
     <%= f.submit "Create Hero"%>
   <% end %>
 
-  <% @game.items.each do |hero| %>
-    <li>
-      <%= item.name %>
-      <ul>
-        <li> <%= item.stats %> </li>
-        <li> <%= link_to "Edit", edit_game_item_path(@game, item) %> </li>
-      </ul>
-    </li>
+<h2> Items </h2>
+  <% @game.items.each do |item| %>
+    <%= item.name %>
+    <ul>
+      <li> <%= item.description %> </li>
+      <li> <%= link_to "Edit", edit_game_item_path(@game, item) %> </li>
+    </ul>
   <% end %>
 
   <%= form_for [@game, @item] do |f| %>

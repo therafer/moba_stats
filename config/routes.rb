@@ -9,4 +9,5 @@ MobaStats::Application.routes.draw do
   end
 
   resources :heros
+  resources :items
 end
