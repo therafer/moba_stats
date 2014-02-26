@@ -19,8 +19,9 @@
   <%= form_for [@game, @hero] do |f| %>
     <%= f.text_field :name, placeholder: "Name" %>
     <%= f.text_field :stats, placeholder: "Stats" %>
-    <%# <%= f.text_field :items, placeholder: "Items" %1> %>
-    <%= f.submit "Create Hero"%>
+    <%= f.select(:item_ids, options_from_collection_for_select(Item.all, :id, :name)) %>
+
+       <%= f.submit "Create Hero"%>
   <% end %>
 
 <h2> Items </h2>

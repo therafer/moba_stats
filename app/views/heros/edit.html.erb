@@ -3,6 +3,6 @@
   <%= form_for @hero do |f| %>
     <%= f.text_field :name %>
     <%= f.text_field :stats %>
-    <%= f.text_field :items %>
+    <%= f.select(:item_ids, options_from_collection_for_select(Item.all, :id, :name)) %>
     <%= f.submit "Edit Hero"%>
   <% end %>
