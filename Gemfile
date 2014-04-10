@@ -12,6 +12,7 @@ gem 'cucumber'
 gem 'haml-rails'
 gem 'authem'
 gem 'pry'
+gem 'faraday'
 
 group :doc do
   gem 'sdoc', require: false

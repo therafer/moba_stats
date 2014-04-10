@@ -4,16 +4,8 @@
 
 <h2> Heroes </h2>
   <% @game.heros.each do |hero| %>
-    <%= hero.name %>
-    <ul>
-      <li> <%= hero.stats %> </li>
-      <ul>
-        <% hero.items.each do |item| %>
-          <li> <%= item.name %> </li>
-        <% end %>
-      </ul>
-      <li> <%= link_to "Edit", edit_game_hero_path(@game, hero) %> </li>
-    </ul>
+    <%= hero[name = "name"] %>
+    <li> <%= link_to "Edit", edit_game_hero_path(@game, hero) %> </li>
   <% end %>
 
   <%= form_for [@game, @hero] do |f| %>
@@ -26,10 +18,8 @@
 
 <h2> Items </h2>
   <% @game.items.each do |item| %>
-    <%= item.name %>
     <ul>
-      <li> <%= item.description %> </li>
-      <li> <%= link_to "Edit", edit_game_item_path(@game, item) %> </li>
+      <li> <%= item %> </li>
     </ul>
   <% end %>
 

@@ -23,11 +23,11 @@ class GamesController < ApplicationController
     end
   end
 
-   def update
-     @game = Game.update(game_params, params[:name])
+  def update
+    @game = Game.update(game_params, params[:name])
 
-     redirect_to games_path
-   end
+    redirect_to games_path
+  end
 
   def game_params
     params.require(:game).permit(
